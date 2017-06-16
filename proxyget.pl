@@ -6,6 +6,7 @@ use utf8;
 
 use AnyEvent;
 use AnyEvent::HTTP;
+use List::MoreUtils qw(uniq);
 
 my @blogs = qw(
     live-socks.net
@@ -59,7 +60,7 @@ print $cv->recv;
 
 # save proxies to file
 open my $fh, '>', "proxies.txt" or die "Cannot open proxies.txt: $!";
-print $fh "$_\n" foreach @proxies;
+print $fh "$_\n" foreach uniq(@proxies);
 close $fh;
 
-print @proxies . " proxies found";
+print uniq(@proxies) . " proxies found";
