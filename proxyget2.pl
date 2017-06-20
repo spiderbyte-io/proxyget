@@ -9,14 +9,14 @@ use AnyEvent::HTTP;
 use List::MoreUtils qw(uniq);
 
 my @blogs = qw(
-live-socks.net
-socks24.org
-socks5-proxy-list.blogspot.com
-sock5us.blogspot.com
-sockproxy.blogspot.com
-socksproxylist24.blogspot.com
-sslproxies24.blogspot.com
-vip-socks24.blogspot.com
+    live-socks.net
+    socks24.org
+    socks5-proxy-list.blogspot.com
+    sock5us.blogspot.com
+    sockproxy.blogspot.com
+    socksproxylist24.blogspot.com
+    sslproxies24.blogspot.com
+    vip-socks24.blogspot.com
 );
 
 my @posts;
@@ -41,7 +41,6 @@ foreach my $blog (@blogs) {
 
                 push @proxies, @matches;
                 $cv->end;
-
             };
         }
         $cv->end;
